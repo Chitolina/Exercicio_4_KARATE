@@ -1,0 +1,4 @@
+{
+    "name": "Joanas", 
+    "email": "#('joanas' + java.util.UUID.randomUUID() + '@example.com')"
+}

@@ -8,19 +8,16 @@ Feature: Remover um usuário
         And path "users"
 
         Scenario: Remover usuário existente
-            # cria um usuário temporário
             * def criar = call read("funcoes/criar.feature")
             And path criar.criarusuario.id 
             When method delete
             Then status 204
 
         Scenario: Remover usuário inexistente
-            # cria um usuário temporário
             * def criar = call read("funcoes/criar.feature")
             And path criar.criarusuario.id 
             When method delete
-            
-            #utiliza  id do usuário apagado
+
             Given path "users"
             And path criar.criarusuario.id 
             When method delete
